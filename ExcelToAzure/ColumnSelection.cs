@@ -52,7 +52,9 @@ namespace ExcelToAzure
         {
             page = 0;
             Headers.Clear();
-            PairedHeaders = (new Header[properties.Length]).ToList();
+            //PairedHeaders = (new Header[properties.Length]).ToList();
+            PairedHeaders = new List<Header>();
+            properties.ToList().ForEach(x => PairedHeaders.Add(new Header() { index = -1, value = "" }));
             for (int i = 0; i < rows.First().Length; i++)
             {
                 Headers.Add(new Header() { index = i, value = rows.First()[i] });
@@ -68,7 +70,7 @@ namespace ExcelToAzure
         void SetListBox()
         {
             ListBox.Items.Clear();
-            Headers.FindAll(x => !PairedHeaders.Select(p => p.index).Contains(x.index)).ForEach(item => ListBox.Items.Add(item.index.ToString() + " " + item.value));
+            Headers.FindAll(x => !PairedHeaders.Any() || !PairedHeaders.Select(p => p.index).Contains(x.index)).ForEach(item => ListBox.Items.Add(item.index.ToString() + " " + item.value));
             title.Text = string.Format("LINK EXCEL COLUMNS TO DATA {0}/{1}", (page + 1).ToString(), properties.Length.ToString());
             txtDataProperty.Text = properties[page];
             txtColumnName.Text = PairedHeaders[page].value;

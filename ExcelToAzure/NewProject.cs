@@ -93,5 +93,10 @@ namespace ExcelToAzure
             label.Text = label.NumbersOnly(true);
             label.SelectionStart = label.Text.Length;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

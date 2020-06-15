@@ -7,12 +7,13 @@ using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Data.SqlTypes;
 
 namespace ExcelToAzure
 {
     public static class Xls
     {
-        public static List<string[]> GetArrayFromFile(string filename)
+        public static void GetArrayFromFile(string filename, Action<List<string[]>> action)
         {
             Sheets objSheets;
             _Worksheet objSheet;
@@ -21,30 +22,19 @@ namespace ExcelToAzure
             var xlApp = new Excel.Application();
             var objBook = xlApp.Workbooks.Open(filename, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
 
+            //Get a reference to the first sheet of the workbook.
+            objSheets = objBook.Worksheets;
 
-            try
+            Action<string> next = (sheet_name) =>
             {
-                try
+                var count = objSheets.Cast<_Worksheet>().Count();
+                objSheet = new Worksheet();
+                for (int i = 1; i <= count; i++)
                 {
-                    //Get a reference to the first sheet of the workbook.
-                    objSheets = objBook.Worksheets;
-                    var listofnames = string.Join("\n", objSheets.Cast<_Worksheet>().Select(x => x.Name));
-                    MessageBox.Show("List of sheets found in this Excel:\n" + listofnames);
-                    objSheet = (_Worksheet)objSheets.get_Item(1);
+                    var x = (_Worksheet)objSheets.get_Item(i);
+                    if (x.Name == sheet_name)
+                        objSheet = x;
                 }
-
-                catch (Exception theException)
-                {
-
-                    MessageBox.Show(theException.Message, "Missing Workbook?");
-
-                    //You can't automate Excel if you can't find the data you created, so 
-                    //leave the subroutine.
-                    return new List<string[]>();
-                }
-
-                //Get a range of data.
-                //range = objSheet.get_Range("A1", "E5");
                 range = objSheet.UsedRange;
 
                 //Retrieve the data from the range.
@@ -66,14 +56,38 @@ namespace ExcelToAzure
                     for (int colCounter = 1; colCounter <= iCols; colCounter++)
                     {
                         //Write the next value into the string.
-                        row[colCounter - 1] = (saRet[rowCounter , colCounter] ?? "").ToString();
+                        row[colCounter - 1] = (saRet[rowCounter, colCounter] ?? "").ToString();
                     }
 
                     //Write in a new line.
                     data.Add(row);
                 }
                 MessageBox.Show("Returning data for Sheet--> " + objSheet.Name);
-                return data;
+                action?.Invoke(data);
+            };
+
+            try
+            {
+                try
+                {
+                    var listofnames = objSheets.Cast<_Worksheet>().Select(x => x.Name).ToList();
+                    var temp = SheetSelection.Open(listofnames);
+                    temp.Selected += (s, e) =>
+                    {
+                        next.Invoke(s as string);
+                    };
+                    temp.ShowDialog();
+                }
+
+                catch (Exception theException)
+                {
+
+                    MessageBox.Show(theException.Message, "Missing Workbook?");
+
+                    //You can't automate Excel if you can't find the data you created, so 
+                    //leave the subroutine.
+                    action?.Invoke(new List<string[]>());
+                }
             }
 
             catch (Exception theException)
@@ -85,7 +99,7 @@ namespace ExcelToAzure
                 errorMessage = String.Concat(errorMessage, theException.Source);
 
                 MessageBox.Show(errorMessage, "Error");
-                return new List<string[]>();
+                action?.Invoke(new List<string[]>());
             }
         }
 

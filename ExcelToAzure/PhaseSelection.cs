@@ -81,7 +81,7 @@ namespace ExcelToAzure
                     try
                     {
                         var filePath = openFileDialog1.FileName;
-                        ColumnSelection.Open(Xls.GetArrayFromFile(filePath), project, updated);
+                        Xls.GetArrayFromFile(filePath, result => ColumnSelection.Open(result, project, updated));
                     }
                     catch (SecurityException ex)
                     {
