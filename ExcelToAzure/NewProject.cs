@@ -41,7 +41,8 @@ namespace ExcelToAzure
                 description = description.Text.Trim(),
                 owner = owner.Text.Trim(),
                 type = type.Text.Trim(),
-                duration = duration.ToDecimal()
+                duration = duration.ToDecimal(),
+                gsf = gsf.ToDecimal()
             };
             set
             {
@@ -94,9 +95,16 @@ namespace ExcelToAzure
             label.SelectionStart = label.Text.Length;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+           private void gsf_TextChanged(object sender, EventArgs e)
+        {
+            var label = sender as TextBox;
+            label.Text = label.NumbersOnly(true);
+            label.SelectionStart = label.Text.Length;
         }
     }
 }

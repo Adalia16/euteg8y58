@@ -134,9 +134,9 @@ namespace ExcelToAzure
         {
             bool success = false;
             string cmdtext = project.id == -1 ?
-                "insert into project (name, description, owner, type, duration) output inserted.id values (@name, @description, @owner, @type, @duration);"
+                "insert into project (name, description, owner, type, duration, gsf) output inserted.id values (@name, @description, @owner, @type, @duration, @gsf);"
                 :
-                "update project set name = @name, description = @description, owner = @owner, type = @type, duration = @duration output inserted.id where id = @id;";
+                "update project set name = @name, description = @description, owner = @owner, type = @type, duration = @duration, gsf = @gsf output inserted.id where id = @id;";
 
             try
             {
@@ -154,6 +154,7 @@ namespace ExcelToAzure
                             command.Parameters.AddWithValue("owner", project.owner);
                             command.Parameters.AddWithValue("type", project.type);
                             command.Parameters.AddWithValue("duration", project.duration);
+                            command.Parameters.AddWithValue("gsf", project.gsf);
 
                             project.id = (int)command.ExecuteScalar();
 

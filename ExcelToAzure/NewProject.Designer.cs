@@ -44,6 +44,8 @@
             this.cancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.create = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.gsf = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,13 +65,15 @@
             this.flowLayoutPanel1.Controls.Add(this.owner);
             this.flowLayoutPanel1.Controls.Add(this.label6);
             this.flowLayoutPanel1.Controls.Add(this.duration);
+            this.flowLayoutPanel1.Controls.Add(this.label7);
+            this.flowLayoutPanel1.Controls.Add(this.gsf);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(43, 20, 43, 39);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(761, 700);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(32, 16, 32, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(597, 687);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -77,10 +81,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.label1.Location = new System.Drawing.Point(32, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 41);
+            this.label1.Size = new System.Drawing.Size(278, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "CREATE NEW COMPANY";
             // 
@@ -88,10 +92,10 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(43, 91);
-            this.labelName.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.labelName.Location = new System.Drawing.Point(32, 72);
+            this.labelName.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(68, 28);
+            this.labelName.Size = new System.Drawing.Size(56, 21);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "NAME";
             // 
@@ -99,10 +103,10 @@
             // 
             this.name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.name.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(43, 129);
-            this.name.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.name.Location = new System.Drawing.Point(32, 101);
+            this.name.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(666, 39);
+            this.name.Size = new System.Drawing.Size(500, 33);
             this.name.TabIndex = 2;
             this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
@@ -110,10 +114,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 188);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label3.Location = new System.Drawing.Point(32, 150);
+            this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 28);
+            this.label3.Size = new System.Drawing.Size(110, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "DESCRIPTION";
             // 
@@ -121,20 +125,20 @@
             // 
             this.description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.description.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.Location = new System.Drawing.Point(43, 226);
-            this.description.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.description.Location = new System.Drawing.Point(32, 179);
+            this.description.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(666, 39);
+            this.description.Size = new System.Drawing.Size(500, 33);
             this.description.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 285);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label4.Location = new System.Drawing.Point(32, 228);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 28);
+            this.label4.Size = new System.Drawing.Size(45, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "TYPE";
             // 
@@ -142,10 +146,10 @@
             // 
             this.type.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.type.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.type.Location = new System.Drawing.Point(43, 323);
-            this.type.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.type.Location = new System.Drawing.Point(32, 257);
+            this.type.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(666, 39);
+            this.type.Size = new System.Drawing.Size(500, 33);
             this.type.TabIndex = 6;
             this.type.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
@@ -153,10 +157,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 382);
-            this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label5.Location = new System.Drawing.Point(32, 306);
+            this.label5.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 28);
+            this.label5.Size = new System.Drawing.Size(67, 21);
             this.label5.TabIndex = 7;
             this.label5.Text = "OWNER";
             // 
@@ -164,10 +168,10 @@
             // 
             this.owner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.owner.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.owner.Location = new System.Drawing.Point(43, 420);
-            this.owner.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.owner.Location = new System.Drawing.Point(32, 335);
+            this.owner.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
             this.owner.Name = "owner";
-            this.owner.Size = new System.Drawing.Size(666, 39);
+            this.owner.Size = new System.Drawing.Size(500, 33);
             this.owner.TabIndex = 8;
             this.owner.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
@@ -175,10 +179,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 479);
-            this.label6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.label6.Location = new System.Drawing.Point(32, 384);
+            this.label6.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 28);
+            this.label6.Size = new System.Drawing.Size(90, 21);
             this.label6.TabIndex = 9;
             this.label6.Text = "DURATION";
             // 
@@ -186,10 +190,10 @@
             // 
             this.duration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.duration.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duration.Location = new System.Drawing.Point(43, 517);
-            this.duration.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.duration.Location = new System.Drawing.Point(32, 413);
+            this.duration.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
             this.duration.Name = "duration";
-            this.duration.Size = new System.Drawing.Size(666, 39);
+            this.duration.Size = new System.Drawing.Size(500, 33);
             this.duration.TabIndex = 10;
             this.duration.Text = "0";
             this.duration.TextChanged += new System.EventHandler(this.duration_TextChanged);
@@ -201,11 +205,11 @@
             this.flowLayoutPanel2.Controls.Add(this.panel1);
             this.flowLayoutPanel2.Controls.Add(this.create);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 604);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 609);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(43, 10, 43, 39);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(761, 96);
+            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(32, 8, 32, 32);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(597, 78);
             this.flowLayoutPanel2.TabIndex = 1;
             this.flowLayoutPanel2.WrapContents = false;
             // 
@@ -215,10 +219,10 @@
             this.cancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Location = new System.Drawing.Point(43, 10);
+            this.cancel.Location = new System.Drawing.Point(32, 8);
             this.cancel.Margin = new System.Windows.Forms.Padding(0);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(136, 52);
+            this.cancel.Size = new System.Drawing.Size(102, 42);
             this.cancel.TabIndex = 0;
             this.cancel.Text = "CANCEL";
             this.cancel.UseVisualStyleBackColor = false;
@@ -227,10 +231,10 @@
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Location = new System.Drawing.Point(179, 10);
+            this.panel1.Location = new System.Drawing.Point(134, 8);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(397, 52);
+            this.panel1.Size = new System.Drawing.Size(298, 42);
             this.panel1.TabIndex = 2;
             // 
             // create
@@ -242,24 +246,47 @@
             this.create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.create.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.create.ForeColor = System.Drawing.Color.White;
-            this.create.Location = new System.Drawing.Point(576, 10);
+            this.create.Location = new System.Drawing.Point(432, 8);
             this.create.Margin = new System.Windows.Forms.Padding(0);
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(136, 52);
+            this.create.Size = new System.Drawing.Size(102, 42);
             this.create.TabIndex = 1;
             this.create.Text = "SAVE";
             this.create.UseVisualStyleBackColor = false;
             this.create.Click += new System.EventHandler(this.create_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(32, 462);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 21);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "GSF";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // gsf
+            // 
+            this.gsf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gsf.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gsf.Location = new System.Drawing.Point(32, 491);
+            this.gsf.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
+            this.gsf.Name = "gsf";
+            this.gsf.Size = new System.Drawing.Size(500, 33);
+            this.gsf.TabIndex = 11;
+            this.gsf.Text = "0";
+            this.gsf.TextChanged += new System.EventHandler(this.gsf_TextChanged);
+            // 
             // NewProject
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 700);
+            this.ClientSize = new System.Drawing.Size(597, 687);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewProject";
@@ -291,5 +318,7 @@
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button create;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox gsf;
     }
 }

@@ -25,6 +25,8 @@ namespace ExcelToAzure
         public string type = "";
         [JsonProperty("duration")]
         public decimal duration = 0;
+        [JsonProperty("gsf")]
+        public decimal gsf = 0;
 
         public Project()
         {
